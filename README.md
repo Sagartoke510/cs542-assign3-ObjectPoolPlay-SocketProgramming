@@ -44,8 +44,9 @@ ant run -buildfile numberPlay/src/build.xml \
 
 -----------------------------------------------------------------------
 ## Description:
-Input file need to be in numberPlay folder and in that location all output files will be generated.
 
+
+##References and citation
 -----------------------------------------------------------------------
 ### Academic Honesty statement:
 -----------------------------------------------------------------------
