@@ -45,7 +45,7 @@
 
   <target name="objectPoolPlay" depends="prepare">
     <javac includeantruntime="false" srcdir="${src}"
-	           includes="objectPoolPlay**"
+	           includes="objectPoolPlay/**"
            excludes="**/package.html"
            destdir="${classes}"
            classpath="${classes}"

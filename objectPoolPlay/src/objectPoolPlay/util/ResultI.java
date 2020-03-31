@@ -2,6 +2,6 @@ package objectPoolPlay.util;
 
 public interface ResultI {
 	
-	public void addPrime();
+	public void addPrime(long num) throws InterruptedException;
 
 }

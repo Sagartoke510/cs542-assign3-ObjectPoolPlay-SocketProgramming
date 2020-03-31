@@ -14,7 +14,7 @@ public class PrimeDetector {
 
 	private String inputFile;
 	private int numOfThreads;
-	private String capacity;
+	private int capacity;
 	private String persisterServiceIp;
 	private String persisterServicePort;
 	private String debugValue;
@@ -23,7 +23,7 @@ public class PrimeDetector {
 			String persisterServicePortIn, String debugValueIn) {
 		inputFile = inputFileIn;
 		numOfThreads = Integer.parseInt(numOfThreadsIn);
-		capacity = capacityIn;
+		capacity = Integer.parseInt(capacityIn);
 		persisterServiceIp = persisterServiceIpIn;
 		persisterServicePort = persisterServicePortIn;
 		debugValue = debugValueIn;
@@ -34,7 +34,7 @@ public class PrimeDetector {
 		try {
 			
 			FileProcessor fp = new FileProcessor(ifilename);
-			ResultI result = new Results();
+			ResultI result = new Results(capacity);
 			IsPrime isPrime = new IsPrime();
 			CreateWorkers workers = new CreateWorkers(fp, result, isPrime);
 			workers.startWorkers(numOfThreads);

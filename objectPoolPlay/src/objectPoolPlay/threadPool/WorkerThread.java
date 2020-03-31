@@ -23,12 +23,12 @@ public class WorkerThread implements Runnable{
 	@Override
 	public void run() {
 		System.out.println("I am in run: "+Thread.currentThread().getName());
-		if(fp.getLine() != null){
+		while(fp.getLine() != null){
 			try {			
 				long num = (long)NumberFormat.getInstance().parse(fp.poll().trim());
 				System.out.println("I have read number:"+num);
 				if(isPrime.checkPrime(num)) {
-					result.addPrime();
+					result.addPrime(num);
 				}
 			} catch (ParseException | IOException | InterruptedException e) {
 				e.printStackTrace();
