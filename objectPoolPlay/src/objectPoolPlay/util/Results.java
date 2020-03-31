@@ -12,11 +12,12 @@ public class Results implements ResultI {
 	}
 
 	@Override
-	public synchronized void addPrime(long num) throws InterruptedException {
-		if(resultQueue.size()<=capacity) {
-		resultQueue.add(num);
-		}else {
-			wait();
+	public synchronized boolean addPrime(long num) throws InterruptedException {
+		if (resultQueue.size() <= capacity) {
+			resultQueue.add(num);
+			return true;
+		} else {
+			return false;
 		}
 	}
 

@@ -28,7 +28,7 @@ public class CreateWorkers {
 		while(!pool.getThreadList().isEmpty()) {
 			Thread t = new Thread(pool.borrow());
 			t.start();
-			t.join();			
+
 		}
 		
 		

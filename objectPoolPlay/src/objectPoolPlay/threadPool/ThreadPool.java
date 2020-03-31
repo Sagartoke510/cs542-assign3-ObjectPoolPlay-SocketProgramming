@@ -36,4 +36,9 @@ public class ThreadPool implements ObjectPool {
 
 	}
 
+	@Override
+	public void returnObject(Runnable r) {
+		threadList.add(r);
+	}
+
 }

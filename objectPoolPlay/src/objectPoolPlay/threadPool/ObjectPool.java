@@ -8,5 +8,6 @@ public interface ObjectPool {
 	
 	public void newFixedPool(int size,FileProcessor fp, ResultI result, IsPrime isPrime);
 	public Runnable borrow();
+	public void returnObject(Runnable r);
 
 }

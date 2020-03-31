@@ -21,22 +21,22 @@ public final class FileProcessor {
 	private BufferedReader reader;
 	private String line;
 
-	public String getLine() {
-		return line;
+	public synchronized String getLine() throws IOException {
+		return reader.readLine();
 	}
 
 	public FileProcessor(String inputFilePath) 
 		throws InvalidPathException, SecurityException, FileNotFoundException, IOException {
 		
 		reader = new BufferedReader(new FileReader(new File(inputFilePath)));
-		line = reader.readLine();
+		//line = reader.readLine();
 	}
 	/**
 	 * Method to read line of input file
 	 * @return string value of line read from input file
 	 */
 	public synchronized String poll() throws IOException {
-		if (null == line) return null;
+		//if (null == line) return null;
 		String newValue = line.trim();
 		line = reader.readLine();
 		
