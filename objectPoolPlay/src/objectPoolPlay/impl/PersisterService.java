@@ -12,7 +12,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class PersisterService{
+import objectPoolPlay.util.MyLogger;
+import objectPoolPlay.util.MyLogger.DebugLevel;
+
+public class PersisterService implements Server{
 	
 	private int port;
 	
@@ -26,6 +29,10 @@ public class PersisterService{
 	private static Set<String>  result = new HashSet<String>();
 	
 	public PersisterService(String portIn, String outputFileIn) {
+		
+		if(MyLogger.debugLevel == DebugLevel.CONSTRUCTOR)
+			MyLogger.writeMessage("PersisterService Constructor is called", DebugLevel.CONSTRUCTOR);
+
 
 		port = Integer.parseInt(portIn);
 		ofileName = outputFileIn;
@@ -45,6 +52,7 @@ public class PersisterService{
 
 	}
 	
+	@Override
 	public void startService() {
 		
 		try {
@@ -78,6 +86,7 @@ public class PersisterService{
 		
 	}
 
+	@Override
 	public void writeToFile() {
 		try {
 			Iterator<String> i = result.iterator();
@@ -91,7 +100,7 @@ public class PersisterService{
 	}
 	
 	
-
+	@Override
 	public void close() {
 		try {
 			oWriter.close();
@@ -101,8 +110,4 @@ public class PersisterService{
 	
 	}
 	
-	@Override
-	public String toString() {
-		return line+"\n";
-	}
 }

@@ -27,15 +27,19 @@ public class WorkerThread implements Runnable {
 
 	@Override
 	public void run() {
+		
+		if(MyLogger.debugLevel == DebugLevel.RUN)
+			MyLogger.writeMessage("Executing run() of WorkerThread", DebugLevel.RUN);
+		
 		try {
 			String num;
 			while ((num = fp.getLine()) != null) {
 				long number = (long) NumberFormat.getInstance().parse(num);
-				System.out.println(Thread.currentThread().getName() + " have read number:" + num);
+				//System.out.println(Thread.currentThread().getName() + " have read number:" + num);
 
 				if (isPrime.checkPrime(number)) {
 					if (!result.addPrime(num)) {
-						System.out.println(Thread.currentThread().getName());
+						//System.out.println(Thread.currentThread().getName());
 						Thread.currentThread().wait();
 					}
 					result.sendData();

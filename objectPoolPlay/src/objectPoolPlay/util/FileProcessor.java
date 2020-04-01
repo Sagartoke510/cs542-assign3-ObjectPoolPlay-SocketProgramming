@@ -12,6 +12,8 @@ import java.nio.file.Paths;
 import java.nio.file.InvalidPathException;
 
 import java.util.List;
+
+import objectPoolPlay.util.MyLogger.DebugLevel;
 /**
  * The class processes input file and reads a line
  * @author Abha Chaudhary
@@ -27,6 +29,9 @@ public final class FileProcessor {
 
 	public FileProcessor(String inputFilePath) 
 		throws InvalidPathException, SecurityException, FileNotFoundException, IOException {
+		if(MyLogger.debugLevel == DebugLevel.CONSTRUCTOR)
+			MyLogger.writeMessage("FileProcessor Constructor is called", DebugLevel.CONSTRUCTOR);
+		
 		
 		reader = new BufferedReader(new FileReader(new File(inputFilePath)));
 		//line = reader.readLine();

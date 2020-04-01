@@ -9,6 +9,7 @@ import objectPoolPlay.util.IsPrime;
 import objectPoolPlay.util.MyLogger;
 import objectPoolPlay.util.ResultI;
 import objectPoolPlay.util.Results;
+import objectPoolPlay.util.MyLogger.DebugLevel;
 
 public class PrimeDetector {
 
@@ -21,6 +22,10 @@ public class PrimeDetector {
 
 	public PrimeDetector(String inputFileIn, String numOfThreadsIn, String capacityIn, String persisterServiceIpIn,
 			String persisterServicePortIn, String debugValueIn) {
+		
+		if(MyLogger.debugLevel == DebugLevel.CONSTRUCTOR)
+			MyLogger.writeMessage("PrimeDetector Constructor is called", DebugLevel.CONSTRUCTOR);
+		
 		inputFile = inputFileIn;
 		numOfThreads = Integer.parseInt(numOfThreadsIn);
 		capacity = Integer.parseInt(capacityIn);

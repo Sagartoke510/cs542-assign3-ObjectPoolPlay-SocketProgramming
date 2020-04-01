@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 import objectPoolPlay.util.FileProcessor;
 import objectPoolPlay.util.IsPrime;
+import objectPoolPlay.util.MyLogger;
 import objectPoolPlay.util.ResultI;
+import objectPoolPlay.util.MyLogger.DebugLevel;
 
 public class CreateWorkers {
 
@@ -14,6 +16,9 @@ public class CreateWorkers {
 	private IsPrime isPrime;
 
 	public CreateWorkers(FileProcessor fpIn, ResultI resultIn, IsPrime isPrimeIn) {
+		
+		if(MyLogger.debugLevel == DebugLevel.CONSTRUCTOR)
+			MyLogger.writeMessage("CreateWorkers Constructor is called", DebugLevel.CONSTRUCTOR);
 
 		fp = fpIn;
 		result = resultIn;
