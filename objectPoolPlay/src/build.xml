@@ -33,7 +33,7 @@
 	        <mkdir dir="${BUILD}/jar"/>
 	        <jar destfile="${BUILD}/jar/persisterService.jar" basedir="${BUILD}/classes">
 	            <manifest>
-	                <attribute name="Main-Class" value="objectPoolPlay.diver.PersistorServiceDriver"/>
+	                <attribute name="Main-Class" value="objectPoolPlay.driver.PersistorServiceDriver"/>
 	            </manifest>
 	        </jar>
 	    </target>
@@ -56,7 +56,7 @@
 
 	<target name="run-prime-detector" depends="prime-detector-jar">
 	    <java jar="${BUILD}/jar/primeDetector.jar" fork="true">
-	        ... <!-- prime detector args -->
+	        <!-- prime detector args -->
 	    	<arg value="${inputFile}"/> <!-- input file -->
 	    		<arg value="${numThreads}"/> <!-- The number of threads to be used: referred to as NUM_THREADS below. -->
 	    		<arg value="${capacity}"/> <!-- Capacity of the results data structure. -->
@@ -69,7 +69,7 @@
 
 	<target name="run-persister-service" depends="persister-service-jar">
 	    <java jar="${BUILD}/jar/persisterService.jar" fork="true">
-	        ... <!-- persister service args -->
+	        <!-- persister service args -->
 	    	<arg value="${port}"/> <!-- Port number on which the server should listen. -->
 	    		<arg value="${outputFile}"/> <!-- Name of the output file to which the data received on the port should be written. -->
 
