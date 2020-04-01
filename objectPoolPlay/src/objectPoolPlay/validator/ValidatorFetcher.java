@@ -5,9 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.ParseException;
 
 import objectPoolPlay.userDefinedExceptions.CmdLineInputException;
+import objectPoolPlay.userDefinedExceptions.NotInRangeException;
 
 /**
  * The class {@code ValidatorFetcher} is to validate input from command line
@@ -39,15 +39,63 @@ public class ValidatorFetcher {
 		};
 	}
 
-	public static Validator lineValidator(String inputFilePath) {
+	public static Validator integerValidator(String inputFilePath) {
 		return new Validator() {
 			@Override
 			public void run() throws IOException {
 				String text = "";
-				String pattern = "^[0-9\\.\\-\\n]*$";
+				String pattern = "^[0-9\\-\\n]*$";
 				text = new String(Files.readAllBytes(Paths.get(inputFilePath)));
 				if (!text.matches(pattern)) {
-					throw new IOException("Invalid line or line contains other than numbers");
+					throw new IOException("Invalid line or line contains other than integers");
+				}
+
+			}
+		};
+	}
+	
+	public static Validator debugValValidator(String debugVal) {
+		return new Validator() {
+			@Override
+			public void run() throws NotInRangeException {				
+				if (Integer.parseInt(debugVal)<0 || Integer.parseInt(debugVal)>4) {
+					throw new NotInRangeException("Debug value must be in range of 0-4");
+				}
+
+			}
+		};
+	}
+	
+	public static Validator numOfThreadsValidator(String numOfThreads) {
+		return new Validator() {
+			@Override
+			public void run() throws NotInRangeException {				
+				if (Integer.parseInt(numOfThreads)<0 || Integer.parseInt(numOfThreads)>6) {
+					throw new NotInRangeException("Number of threads value must be in range of 0-5");
+				}
+
+			}
+		};
+	}
+	
+	public static Validator capacityValidator(String capacity) {
+		return new Validator() {
+			@Override
+			public void run() throws NotInRangeException {				
+				if (Integer.parseInt(capacity)<=0) {
+					throw new NotInRangeException("Capacity should be greater than 0");
+				}
+
+			}
+		};
+	}
+	
+	public static Validator portValidator(String port) {
+		return new Validator() {
+			@Override
+			public void run() throws NotInRangeException {				
+				if (Integer.parseInt(port)<32768 || Integer.parseInt(port)>50000) {
+					throw new NotInRangeException("Port must be in range of 32768-50000");
 				}
 
 			}

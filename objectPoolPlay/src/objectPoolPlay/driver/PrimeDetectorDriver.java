@@ -11,7 +11,7 @@ public class PrimeDetectorDriver {
 	public static void main(String[] args) {
 		System.out.println("I am in Prime Detector");
 		final int REQUIRED_NUMBER_OF_ARGS = 6;
-		
+
 		String ifilename = "";
 		String workingDirectory = System.getProperty("user.dir");
 		ifilename = workingDirectory + File.separator + args[0];
@@ -19,8 +19,10 @@ public class PrimeDetectorDriver {
 		try {
 			ValidatorUtil.validate("failed",
 					ValidatorFetcher.commandLineValidatorForPrime(args, REQUIRED_NUMBER_OF_ARGS),
-					ValidatorFetcher.missingFileValidator(ifilename), ValidatorFetcher.emptyFileValidator(args[0]));
-			
+					ValidatorFetcher.missingFileValidator(ifilename), ValidatorFetcher.emptyFileValidator(args[0]),
+					ValidatorFetcher.numOfThreadsValidator(args[1]), ValidatorFetcher.capacityValidator(args[2]),
+					ValidatorFetcher.portValidator(args[4]), ValidatorFetcher.debugValValidator(args[5]));
+
 			PrimeDetector pd = new PrimeDetector(args[0], args[1], args[2], args[3], args[4], args[5]);
 			pd.process(ifilename);
 
