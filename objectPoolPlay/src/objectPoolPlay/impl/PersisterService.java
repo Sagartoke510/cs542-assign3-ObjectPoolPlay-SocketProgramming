@@ -8,6 +8,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class PersisterService{
 	
@@ -20,6 +23,7 @@ public class PersisterService{
 	private static  File ofile;
 	private static FileWriter oWriter;
 	private String line = "";
+	private static Set<String>  result = new HashSet<String>();
 	
 	public PersisterService(String portIn, String outputFileIn) {
 
@@ -27,7 +31,6 @@ public class PersisterService{
 		ofileName = outputFileIn;
 		try {
 			if (!Files.exists(Paths.get(ofileName))) {
-				System.out.println("File created successfully");
 				ofile = new File(ofileName);
 
 				ofile.createNewFile();
@@ -57,10 +60,12 @@ public class PersisterService{
 			while(!(line = dis.readUTF()).equals("STOP")) {	
 				
 				System.out.println("I am reading: "+line);
-				writeToFile(line);
+				result.add(line);
+				
 			}
 			if (line.equals("STOP")) {
 				System.out.println("I am reading:"+line);
+				writeToFile();
 				close();
 				socket.close();
 				dis.close();
@@ -73,13 +78,12 @@ public class PersisterService{
 		
 	}
 
-	public void writeToFile(String line) {
+	public void writeToFile() {
 		try {
-
-			System.out.println("I am in write to file");
-
-			System.out.println(line);
-			oWriter.write(line + System.lineSeparator());
+			Iterator<String> i = result.iterator();
+			while(i.hasNext()) {
+			oWriter.write(i.next() + System.lineSeparator());
+			}
 
 		} catch (IOException e) {
 			e.printStackTrace();

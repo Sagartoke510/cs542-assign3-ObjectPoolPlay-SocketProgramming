@@ -3,6 +3,7 @@ package objectPoolPlay.driver;
 import java.io.File;
 
 import objectPoolPlay.impl.PrimeDetector;
+import objectPoolPlay.userDefinedExceptions.CmdLineInputException;
 import objectPoolPlay.validator.ValidatorFetcher;
 import objectPoolPlay.validator.ValidatorUtil;
 
@@ -11,6 +12,14 @@ public class PrimeDetectorDriver {
 	public static void main(String[] args) {
 		System.out.println("I am in Prime Detector");
 		final int REQUIRED_NUMBER_OF_ARGS = 6;
+		
+		if ((args.length != REQUIRED_NUMBER_OF_ARGS) || (args[0].equals("${inputFile}"))
+				|| (args[1].equals("${numThreads}")) || (args[2].equals("${capacity}"))
+				|| (args[3].equals("${persisterServiceIp}")) || (args[4].equals("${persisterServicePort}"))
+				|| (args[5].equals("${debugValue}"))) {
+			System.err.printf("Error: Incorrect number of arguments. Program accepts %d arguments.\n", REQUIRED_NUMBER_OF_ARGS);
+			System.exit(0);
+		}
 
 		String ifilename = "";
 		String workingDirectory = System.getProperty("user.dir");
