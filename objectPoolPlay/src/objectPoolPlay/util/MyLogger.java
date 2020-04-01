@@ -7,7 +7,7 @@ public class MyLogger {
 		CONSTRUCTOR, RUN,RESULT_ENTRY,RESULT_CONTENTS,RELEASE;
 	};
 
-	private static DebugLevel debugLevel;
+	public static DebugLevel debugLevel;
 
 	// FIXME: Add switch cases for all the levels
 	public static void setDebugValue(int levelIn) {

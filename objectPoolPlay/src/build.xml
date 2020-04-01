@@ -33,7 +33,7 @@
 	        <mkdir dir="${BUILD}/jar"/>
 	        <jar destfile="${BUILD}/jar/persisterService.jar" basedir="${BUILD}/classes">
 	            <manifest>
-	                <attribute name="Main-Class" value="objectPoolPlay.driver.PersistorServiceDriver"/>
+	                <attribute name="Main-Class" value="objectPoolPlay.driver.PersisterServiceDriver"/>
 	            </manifest>
 	        </jar>
 	    </target>

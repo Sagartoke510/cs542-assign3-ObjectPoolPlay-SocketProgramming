@@ -6,15 +6,20 @@ import java.text.ParseException;
 
 import objectPoolPlay.util.FileProcessor;
 import objectPoolPlay.util.IsPrime;
+import objectPoolPlay.util.MyLogger;
+import objectPoolPlay.util.MyLogger.DebugLevel;
 import objectPoolPlay.util.ResultI;
 
 public class WorkerThread implements Runnable {
+
 
 	private FileProcessor fp;
 	private ResultI result;
 	private IsPrime isPrime;
 
 	public WorkerThread(FileProcessor fpIn, ResultI resultIn, IsPrime isPrimeIn) {
+		if(MyLogger.debugLevel == DebugLevel.CONSTRUCTOR)
+			MyLogger.writeMessage("WorkerThread Constructor is called", DebugLevel.CONSTRUCTOR);
 		fp = fpIn;
 		result = resultIn;
 		isPrime = isPrimeIn;
@@ -29,14 +34,17 @@ public class WorkerThread implements Runnable {
 				System.out.println(Thread.currentThread().getName() + " have read number:" + num);
 
 				if (isPrime.checkPrime(number)) {
-					if(!result.addPrime(number)) {
+					if (!result.addPrime(num)) {
+						System.out.println(Thread.currentThread().getName());
 						Thread.currentThread().wait();
 					}
+					result.sendData();
+
 				}
 			}
+
 		} catch (IOException | ParseException | InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
-
 }
