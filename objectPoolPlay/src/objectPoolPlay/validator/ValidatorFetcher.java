@@ -11,8 +11,6 @@ import objectPoolPlay.userDefinedExceptions.NotInRangeException;
 
 /**
  * The class {@code ValidatorFetcher} is to validate input from command line
- * @author Abha Chaudhary
- *
  */
 public class ValidatorFetcher {
 	public static Validator missingFileValidator(String inputFilePath) {
@@ -20,7 +18,7 @@ public class ValidatorFetcher {
 			@Override
 			public void run() throws FileNotFoundException {
 				if (!Files.exists(Paths.get(inputFilePath))) {
-					throw new FileNotFoundException("invalid input file or input file in incorrect location");
+					throw new FileNotFoundException("nvalid input file or input file in incorrect location");
 				}
 			}
 		};
@@ -44,7 +42,7 @@ public class ValidatorFetcher {
 			@Override
 			public void run() throws IOException {
 				String text = "";
-				String pattern = "^[0-9\\-\\n]*$";
+				String pattern = "^[0-9\\r\\n]*$";
 				text = new String(Files.readAllBytes(Paths.get(inputFilePath)));
 				if (!text.matches(pattern)) {
 					throw new IOException("Invalid line or line contains other than integers");

@@ -9,6 +9,9 @@ import objectPoolPlay.util.MyLogger;
 import objectPoolPlay.util.ResultI;
 import objectPoolPlay.util.MyLogger.DebugLevel;
 
+/**
+ * This class is {@code CreateWorkers} that creates worker threads
+ */
 public class CreateWorkers {
 
 	private FileProcessor fp;
@@ -24,6 +27,11 @@ public class CreateWorkers {
 		result = resultIn;
 		isPrime = isPrimeIn;
 	}
+	
+	/**
+	 * Method to start Worker Threads by using borrow() method to borrow from Thread pool
+	 * @param numOfThreads is total number of threads needed
+	 */
 	
 	public void startWorkers(int numOfThreads) throws InterruptedException, IOException {
 
@@ -45,6 +53,10 @@ public class CreateWorkers {
 		}
 
 	}
+	
+	/**
+	 * Method to send STOP string when input file has no more data to process
+	 */
 	
 	public void stop() throws InterruptedException {
 		result.addPrime("STOP");

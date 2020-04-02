@@ -7,6 +7,11 @@ import objectPoolPlay.util.FileProcessor;
 import objectPoolPlay.util.IsPrime;
 import objectPoolPlay.util.ResultI;
 
+/**
+ * Class that implements {@code ObjectPool} and creates ThreadPool
+ */
+
+
 public class ThreadPool implements ObjectPool {
 
 	private List<Runnable> threadList = new ArrayList<Runnable>();

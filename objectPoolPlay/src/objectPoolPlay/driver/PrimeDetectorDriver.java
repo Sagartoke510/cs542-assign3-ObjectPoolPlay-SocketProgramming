@@ -6,7 +6,9 @@ import objectPoolPlay.impl.PrimeDetector;
 import objectPoolPlay.userDefinedExceptions.CmdLineInputException;
 import objectPoolPlay.validator.ValidatorFetcher;
 import objectPoolPlay.validator.ValidatorUtil;
-
+/**
+* The Driver class for Prime Detector {@code PrimeDetectorDriver}
+*/
 public class PrimeDetectorDriver {
 
 	public static void main(String[] args) {
@@ -30,7 +32,8 @@ public class PrimeDetectorDriver {
 					ValidatorFetcher.commandLineValidatorForPrime(args, REQUIRED_NUMBER_OF_ARGS),
 					ValidatorFetcher.missingFileValidator(ifilename), ValidatorFetcher.emptyFileValidator(args[0]),
 					ValidatorFetcher.numOfThreadsValidator(args[1]), ValidatorFetcher.capacityValidator(args[2]),
-					ValidatorFetcher.portValidator(args[4]), ValidatorFetcher.debugValValidator(args[5]));
+					ValidatorFetcher.portValidator(args[4]), ValidatorFetcher.debugValValidator(args[5]),
+					ValidatorFetcher.integerValidator(ifilename));
 
 			PrimeDetector pd = new PrimeDetector(args[0], args[1], args[2], args[3], args[4], args[5]);
 			pd.process(ifilename);

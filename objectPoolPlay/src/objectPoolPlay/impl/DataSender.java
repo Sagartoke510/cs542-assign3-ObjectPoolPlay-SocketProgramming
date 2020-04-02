@@ -7,6 +7,12 @@ import java.net.Socket;
 import objectPoolPlay.util.MyLogger;
 import objectPoolPlay.util.MyLogger.DebugLevel;
 
+/**
+ * 
+ * This class {@code DataSender} is a Client as well as thread implementation
+ * which sends data to server using sockets
+ * 
+ */
 public class DataSender implements Runnable{
 	private Socket socket = null;
 	private DataOutputStream out = null;
@@ -14,19 +20,38 @@ public class DataSender implements Runnable{
 	private boolean dataSendStop = false;
 	private static int sum =0;
 	
-
+	/**
+     * Getter method for private data members
+     * @param None
+	 * @return String
+     */
 	public String getLine() {
 		return line;
 	}
-
+	
+	/**
+     * Setter method for private data members
+     * @param line line read from server
+	 * @return None
+     */
 	public void setLine(String line) {
 		this.line = line;
 	}
 
+	/**
+     * Boolean method for checking end of file
+     * @param None
+	 * @return dataSendStop returns flag
+     */
 	public boolean isDataSendStop() {
 		return dataSendStop;
 	}
 
+	/**
+     * Setter method for boolean value : sets flag for end of file
+     * @param dataSendStop boolean value 
+	 * @return None
+     */
 	public void setDataSendStop(boolean dataSendStop) {
 		this.dataSendStop = dataSendStop;
 	}
@@ -51,11 +76,7 @@ public class DataSender implements Runnable{
 			MyLogger.writeMessage("Executing run() of DataSender", DebugLevel.RUN);
 		
 		try {
-			if(socket.isClosed()){
-				out.close();
-				socket.close();
-				return;
-			}
+			
 			out.writeUTF(this.getLine());
 			if(!this.getLine().equals("STOP")) {
 			sum = sum + Integer.parseInt(line);

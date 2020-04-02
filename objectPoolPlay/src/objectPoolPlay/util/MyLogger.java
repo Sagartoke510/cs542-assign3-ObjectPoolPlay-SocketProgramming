@@ -2,14 +2,12 @@ package objectPoolPlay.util;
 
 public class MyLogger {
 
-	// FIXME: Add more enum values as needed for the assignment
 	public static enum DebugLevel {
 		CONSTRUCTOR, RUN,RESULT_ENTRY,RESULT_CONTENTS,RELEASE;
 	};
 
 	public static DebugLevel debugLevel;
 
-	// FIXME: Add switch cases for all the levels
 	public static void setDebugValue(int levelIn) {
 		switch (levelIn) {
 		case 4:

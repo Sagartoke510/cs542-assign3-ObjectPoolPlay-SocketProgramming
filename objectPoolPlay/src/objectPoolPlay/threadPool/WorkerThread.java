@@ -10,6 +10,11 @@ import objectPoolPlay.util.MyLogger;
 import objectPoolPlay.util.MyLogger.DebugLevel;
 import objectPoolPlay.util.ResultI;
 
+/**
+ * This Class is a Thread Class which implements {@code Runnable} and process {@code FileProcessor}
+ * to check for prime and passes result to {@code ResultI} instance
+ */
+
 public class WorkerThread implements Runnable {
 
 

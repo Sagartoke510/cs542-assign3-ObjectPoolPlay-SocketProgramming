@@ -11,6 +11,11 @@ import objectPoolPlay.util.ResultI;
 import objectPoolPlay.util.Results;
 import objectPoolPlay.util.MyLogger.DebugLevel;
 
+/**
+ * 
+ * This class is {@code PrimeDetector} main class
+ * 
+ */
 public class PrimeDetector {
 
 	private String inputFile;
@@ -34,6 +39,11 @@ public class PrimeDetector {
 		debugValue = Integer.parseInt(debugValueIn);
 	}
 
+	/**
+     * Method to send FileProcessor, ResultI and IsPrime to CreateWorkers for further thread creation
+     * @param ifilename where input file resides to pass to FileProcessor 
+	 * @return None
+     */
 	public void process(String ifilename) {
 		
 		try {

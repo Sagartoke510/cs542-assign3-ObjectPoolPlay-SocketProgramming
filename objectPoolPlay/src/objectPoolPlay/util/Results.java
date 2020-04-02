@@ -4,7 +4,9 @@ import java.util.Vector;
 
 import objectPoolPlay.impl.DataSender;
 import objectPoolPlay.util.MyLogger.DebugLevel;
-
+/**
+ * This class {@code Results} implements {@code ResultI} stores result in data structure
+ */
 public class Results implements ResultI {
 	private static Vector<String> resultQueue = new Vector<String>();
 	private int capacity;

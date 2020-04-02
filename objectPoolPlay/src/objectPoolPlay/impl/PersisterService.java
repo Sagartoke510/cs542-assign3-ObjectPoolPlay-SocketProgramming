@@ -15,6 +15,11 @@ import java.util.Set;
 import objectPoolPlay.util.MyLogger;
 import objectPoolPlay.util.MyLogger.DebugLevel;
 
+/**
+ * The class {@code PersisterService} is Server for socket programming It is used to start the service and write ouput to the file.
+ * 
+ *
+ */
 public class PersisterService implements Server{
 	
 	private int port;
@@ -52,6 +57,11 @@ public class PersisterService implements Server{
 
 	}
 	
+	/**
+     * Method for Starting Server
+     * @param None
+	 * @return None
+     */
 	@Override
 	public void startService() {
 		
@@ -86,6 +96,11 @@ public class PersisterService implements Server{
 		
 	}
 
+	/**
+     * Method for Writing prime numbers to the output file
+     * @param None
+	 * @return None
+     */
 	@Override
 	public void writeToFile() {
 		try {
@@ -99,7 +114,11 @@ public class PersisterService implements Server{
 		}
 	}
 	
-	
+	/**
+     * Method for Closing File writer
+     * @param None
+	 * @return None
+     */	
 	@Override
 	public void close() {
 		try {

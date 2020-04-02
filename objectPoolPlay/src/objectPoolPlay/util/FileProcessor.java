@@ -16,13 +16,16 @@ import java.util.List;
 import objectPoolPlay.util.MyLogger.DebugLevel;
 /**
  * The class processes input file and reads a line
- * @author Abha Chaudhary
- *
  */
 public final class FileProcessor {
 	private BufferedReader reader;
 	private String line;
 
+	/**
+	 * Method to read line of input file
+	 * @return string value of line read from input file
+	 */
+	
 	public synchronized String getLine() throws IOException {
 		return reader.readLine();
 	}

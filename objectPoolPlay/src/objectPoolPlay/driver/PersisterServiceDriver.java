@@ -6,7 +6,9 @@ import objectPoolPlay.impl.PersisterService;
 import objectPoolPlay.userDefinedExceptions.CmdLineInputException;
 import objectPoolPlay.validator.ValidatorFetcher;
 import objectPoolPlay.validator.ValidatorUtil;
-
+/**
+* The Driver class for persister service {@code PersisterServiceDriver}
+*/
 public class PersisterServiceDriver {
 
 	public static void main(String[] args) {
