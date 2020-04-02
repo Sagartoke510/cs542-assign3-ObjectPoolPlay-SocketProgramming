@@ -22,7 +22,6 @@ public class DataSender implements Runnable{
 	
 	/**
      * Getter method for private data members
-     * @param None
 	 * @return String
      */
 	public String getLine() {
@@ -32,7 +31,6 @@ public class DataSender implements Runnable{
 	/**
      * Setter method for private data members
      * @param line line read from server
-	 * @return None
      */
 	public void setLine(String line) {
 		this.line = line;
@@ -40,7 +38,6 @@ public class DataSender implements Runnable{
 
 	/**
      * Boolean method for checking end of file
-     * @param None
 	 * @return dataSendStop returns flag
      */
 	public boolean isDataSendStop() {
@@ -50,7 +47,6 @@ public class DataSender implements Runnable{
 	/**
      * Setter method for boolean value : sets flag for end of file
      * @param dataSendStop boolean value 
-	 * @return None
      */
 	public void setDataSendStop(boolean dataSendStop) {
 		this.dataSendStop = dataSendStop;

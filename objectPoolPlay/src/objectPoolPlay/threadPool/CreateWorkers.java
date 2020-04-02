@@ -31,6 +31,7 @@ public class CreateWorkers {
 	/**
 	 * Method to start Worker Threads by using borrow() method to borrow from Thread pool
 	 * @param numOfThreads is total number of threads needed
+	 * @throws InterruptedException IOException
 	 */
 	
 	public void startWorkers(int numOfThreads) throws InterruptedException, IOException {
@@ -56,6 +57,7 @@ public class CreateWorkers {
 	
 	/**
 	 * Method to send STOP string when input file has no more data to process
+	 * @throws InterruptedException
 	 */
 	
 	public void stop() throws InterruptedException {

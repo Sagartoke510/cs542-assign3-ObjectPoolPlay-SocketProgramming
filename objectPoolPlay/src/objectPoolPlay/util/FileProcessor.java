@@ -24,6 +24,7 @@ public final class FileProcessor {
 	/**
 	 * Method to read line of input file
 	 * @return string value of line read from input file
+	 * @throws IOException
 	 */
 	
 	public synchronized String getLine() throws IOException {
@@ -42,6 +43,7 @@ public final class FileProcessor {
 	/**
 	 * Method to read line of input file
 	 * @return string value of line read from input file
+	 * @throws IOException
 	 */
 	public synchronized String poll() throws IOException {
 		//if (null == line) return null;
@@ -52,6 +54,7 @@ public final class FileProcessor {
 	}
 	/**
 	 * Method to close the resources opened to read a file
+	 * @throws IOException
 	 */
 	public void close() throws IOException {
 		try {

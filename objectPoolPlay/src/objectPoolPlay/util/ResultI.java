@@ -8,6 +8,7 @@ public interface ResultI {
 	/**
 	 * Method to add prime number in data structure
 	 * @param num to be added to data structure
+	 * @return boolean if integer is prime or  not
 	 */
 	public boolean addPrime(String num) throws InterruptedException;
 	
@@ -18,7 +19,7 @@ public interface ResultI {
 	
 	/**
 	 * Method to get result data structure
-	 * @return Vector<String> that contains all prime numbers
+	 * @return Vector that contains all prime numbers
 	 */
 	public Vector<String> getResultQueue();
 

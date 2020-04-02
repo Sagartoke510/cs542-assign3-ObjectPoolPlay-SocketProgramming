@@ -59,8 +59,6 @@ public class PersisterService implements Server{
 	
 	/**
      * Method for Starting Server
-     * @param None
-	 * @return None
      */
 	@Override
 	public void startService() {
@@ -98,8 +96,6 @@ public class PersisterService implements Server{
 
 	/**
      * Method for Writing prime numbers to the output file
-     * @param None
-	 * @return None
      */
 	@Override
 	public void writeToFile() {
@@ -116,8 +112,6 @@ public class PersisterService implements Server{
 	
 	/**
      * Method for Closing File writer
-     * @param None
-	 * @return None
      */	
 	@Override
 	public void close() {

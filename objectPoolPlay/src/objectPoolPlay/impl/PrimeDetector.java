@@ -42,7 +42,6 @@ public class PrimeDetector {
 	/**
      * Method to send FileProcessor, ResultI and IsPrime to CreateWorkers for further thread creation
      * @param ifilename where input file resides to pass to FileProcessor 
-	 * @return None
      */
 	public void process(String ifilename) {
 		
