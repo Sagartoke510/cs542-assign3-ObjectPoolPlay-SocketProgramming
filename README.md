@@ -73,7 +73,7 @@ One of our computer system crashed that lead to lesser co-ordination with each o
 
 Due to this and multiple submissions during those days, we were bound to use "4 slack days" in order to complete our assignment.
 
-Also, there are certain commits that we made by Akshay Anvekar but was registered on Kenneth Fernandes. Following are the commit Ids: 45f3a72, 5de3fbe, 93824fa, d504b1a.
+
 
 
 
