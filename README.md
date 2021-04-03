@@ -3,11 +3,6 @@
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
-Point to note:
-1.Used 3 slack days
-2. input.txt should be in objectPoolPlay/ directory
-3. Output file will be generated at objectPoolPlay/ directory
-
 Following are the commands and the instructions to run ANT on your project.
 #### Note: build.xml is present in objectPoolPlay/src folder.
 
@@ -54,18 +49,31 @@ ant -buildfile objectPoolPlay/src/build.xml run-prime-detector
 -----------------------------------------------------------------------
 ## Description:
 We have used Vector data structure to store results since it is synchronized.
+Assumptions:
+1. The first assumption would be the input is well formated with every number in new line.
+  The input number are integer value only
+  We are assuming that there are no duplicate
+  
+2. Data structures:
+  Vector: Used for storing the prime number results as it is thread safe.
+  ArrayList: Used for storing the threads.
 
-##References and citation
------------------------------------------------------------------------
-### Academic Honesty statement:
------------------------------------------------------------------------
+External Materials:
 
-"We have done this assignment completely on our own. We have not copied
-it, nor have we given our solution to anyone else. We understand that if
-We are involved in plagiarism or cheating an official form will be
-submitted to the Academic Honesty Committee of the Watson School to
-determine the action that needs to be taken. "
+  Socket Programming - geeksforgeeks
+  Multithreading wait(), notify() - tutorials point
 
-Date: [04/01/2020]
+Compiling: Follow the instruction as mentioned above.
+
+Run: Follow the instructions as mentioned above.
+
+Challenges Faced:
+
+One of our computer system crashed that lead to lesser co-ordination with each other in committing the code to the repository. Luckily, we got another system but it was too late for us to submit the assignment on time.
+
+Due to this and multiple submissions during those days, we were bound to use "4 slack days" in order to complete our assignment.
+
+Also, there are certain commits that we made by Akshay Anvekar but was registered on Kenneth Fernandes. Following are the commit Ids: 45f3a72, 5de3fbe, 93824fa, d504b1a.
+
 
 
